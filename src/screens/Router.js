@@ -1,16 +1,16 @@
 import React from 'react';
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 /* Loading  */
-import Loading from './Loading/Index';
+import Loading from './Loading/Index'; 
 
 /* Authenticate  */
-import Login from './Authenticate/Login';
+import Login from './Authenticate/Login'; // 
 import Register from './Authenticate/Register';
 
 /* Home  */
-import HomeIndex from './Home/Index';
+import HomeIndex from './Home';
 
 const AuthenticateStack = createStackNavigator( {
     Login:{
@@ -18,17 +18,17 @@ const AuthenticateStack = createStackNavigator( {
     },
     Register:{
         screen:Register
+
     }
 });
 const HomeStack = createStackNavigator( {
     Home:{
         screen:HomeIndex
     }
-    
 });
 
 const SwitchNavigator = createSwitchNavigator( {
-    Loading,
+    Loading:Loading,
     App:HomeStack,
     Auth:AuthenticateStack
     
